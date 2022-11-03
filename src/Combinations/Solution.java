@@ -21,9 +21,9 @@ public class Solution {
     private static void combine(List<List<Integer>> res, LinkedList<Integer> comb, int n, int k, int i) {
         if (comb.size() == k) res.add(new ArrayList<>(comb));
 
-        for (int j = i; j < n && comb.size() < k; j++) {
+        for (int j = i; j <= n && comb.size() < k; j++) {
             comb.add(j);
-            combine(res, comb, n, k, i + 1);
+            combine(res, comb, n, k, j + 1);
             comb.removeLast();
         }
     }
