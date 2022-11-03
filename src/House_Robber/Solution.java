@@ -10,8 +10,8 @@ public class Solution {
 
     // Input: 2 1 3 10
     // Cycle step: 1  -  2  -  3  -  4
-    // stolen:     2     1     5     12
-    // notStolen:  0     2     2     5
+    // stolen:     2  >  1  >  5  >  12
+    // notStolen:  0  >  2  >  2  >  5
     public static int rob(int[] nums) {
         if (nums.length == 0) return 0;
         if (nums.length == 1) return nums[0];
