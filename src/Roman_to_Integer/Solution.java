@@ -8,7 +8,40 @@ public class Solution {
         System.out.println(romanToInt("XLCD"));
     }
 
+    // Better speed
     public static int romanToInt(String s) {
+        int[] numbers = new int[s.length()];
+        for (int i = 0; i < s.length(); i++) {
+            switch (s.charAt(i)) {
+                case 'M' -> numbers[i] = 1000;
+                case 'D' -> numbers[i] = 500;
+                case 'C' -> numbers[i] = 100;
+                case 'L' -> numbers[i] = 50;
+                case 'X' -> numbers[i] = 10;
+                case 'V' -> numbers[i] = 5;
+                default -> numbers[i] = 1;
+            }
+        }
+
+        int result = 0;
+        for (int i = numbers.length - 1; i >= 0; i--) {
+            if (i == 0) {
+                result += numbers[i];
+                break;
+            }
+            if (numbers[i] > numbers[i - 1]) {
+                result += numbers[i] - numbers[i - 1];
+                i--;
+            } else {
+                result += numbers[i];
+            }
+        }
+
+        return result;
+    }
+
+    // Better memory
+    public static int romanToInt_Old(String s) {
         int memory = 0, result = 0;
         char[] symbols = s.toCharArray();
 
