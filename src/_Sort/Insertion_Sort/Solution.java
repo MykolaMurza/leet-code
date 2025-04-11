@@ -24,8 +24,8 @@ import java.util.List;
 public class Solution {
     public static void main(String[] args) {
         List<Integer> arr = new ArrayList<>(List.of(5, 4, 3, 2, 10, 101, 6, 5, 25));
-        insertionSort(arr);
-        System.out.println(arr);
+        List<List<Integer>> steps = insertionSort(arr);
+        steps.forEach(System.out::println);
     }
 
     public static List<List<Integer>> insertionSort(List<Integer> arr) {
@@ -33,6 +33,7 @@ public class Solution {
         if (arr.isEmpty()) {
             return res;
         }
+        res.add(new ArrayList<>(arr));
 
         for (int i = 1; i < arr.size(); i++) {
             int j = i;
