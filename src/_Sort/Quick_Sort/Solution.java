@@ -17,7 +17,7 @@ public class Solution {
     }
 
     private static void quickSort(int[] arr, int start, int end) {
-        if (end - start <= 0) {
+        if (start >= end) {
             return;
         }
 

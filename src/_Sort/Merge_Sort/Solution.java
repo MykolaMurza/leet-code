@@ -5,7 +5,8 @@ import java.util.Arrays;
 public class Solution {
     public static void main(String[] args) {
 //        int[] arr1 = new int[]{5, 4, 3, 2, 10, 101, 6, 5, 25};
-        int[] arr1 = new int[]{5, 1, 1, 2, 0, 0};
+        int[] arr1 = new int[]{};
+//        int[] arr1 = new int[]{5, 1, 1, 2, 0, 0, 10};
         mergeSort(arr1);
         System.out.println(Arrays.toString(arr1));
     }
@@ -15,7 +16,7 @@ public class Solution {
     }
 
     private static void mergeSort(int[] arr, int start, int end) {
-        if (end - start <= 0) {
+        if (start >= end) {
             return;
         }
 
